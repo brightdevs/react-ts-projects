@@ -1,10 +1,6 @@
-import './styles/App.scss';
+import Router from './router/index';
 function App() {
-  return (
-    <div>
-      <h1 className='txt-color-pink'>Bright Devs</h1>
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

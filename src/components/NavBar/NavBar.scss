@@ -1,0 +1,81 @@
+@use '../../styles/colors.scss' as color;
+
+.nav-bar {
+
+    // z-index: 1;
+    // background-color: $white-color;
+    // @include utils.flex(row, space-between, center);
+    min-height: 5rem;
+    padding: 0 1rem;
+    border-bottom: 1px solid color.$color-dark-muted;
+
+
+    &__brand {
+        color: color.$color-dark-muted;
+    }
+
+    ul {
+        display: none;
+        list-style: none;
+        // @include utils.flex(row, space-between, center);
+    }
+
+    li {
+        a {
+            color: color.$color-dark-muted;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            // @include utils.flex(row, center, center);
+
+            &:hover {
+                color: color.$color-pink;
+                opacity: .8;
+            }
+
+            &.active {
+                color: color.$color-pink;
+
+
+                &::after {
+                    content: '/>';
+                }
+
+                &::before {
+                    content: '<';
+                }
+            }
+        }
+    }
+
+    &__links {
+        li:nth-child(3) {
+            a {
+                border-radius: 2rem;
+
+                &:hover {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    &__burger-icon {
+        font-size: 2.5rem;
+        color: color.$color-pink;
+
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-bar {
+        ul {
+            display: flex;
+        }
+
+        &__burger-icon {
+            display: none;
+        }
+    }
+}
